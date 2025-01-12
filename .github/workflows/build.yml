@@ -187,3 +187,10 @@ jobs:
         with:
           name: macos
           path: build/macos/Build/Products/Release/*.app
+
+      # Install protoc for macOS
+      - name: Install protoc (macOS)
+        if: matrix.target == 'macos'
+        run: |
+          brew install protobuf
+          protoc --version
