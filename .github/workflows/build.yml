@@ -151,6 +151,12 @@ jobs:
           path: build/linux/x64/release/bundle/*
 
       # iOS/iPadOS
+      - name: Install protoc (iOS)
+        if: matrix.target == 'ios'
+        run: |
+          brew install protobuf
+          protoc --version
+
       - name: Install CocoaPods (iOS)
         if: matrix.target == 'ios'
         run: gem install cocoapods
@@ -175,6 +181,12 @@ jobs:
           path: build/ios/Release-iphoneos/*.app
 
       # macOS
+      - name: Install protoc (macOS)
+        if: matrix.target == 'macos'
+        run: |
+          brew install protobuf
+          protoc --version
+
       - name: Build macOS App without code signing (macOS)
         if: matrix.target == 'macos'
         run: |
@@ -187,10 +199,3 @@ jobs:
         with:
           name: macos
           path: build/macos/Build/Products/Release/*.app
-
-      # Install protoc for macOS
-      - name: Install protoc (macOS)
-        if: matrix.target == 'macos'
-        run: |
-          brew install protobuf
-          protoc --version
