@@ -160,7 +160,6 @@ jobs:
         run: |
           cd ios
           pod install
-          cd ..
 
       - name: Build iOS App without code signing (iOS)
         if: matrix.target == 'ios'
