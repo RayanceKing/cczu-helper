@@ -17,6 +17,10 @@ jobs:
             target: windows
           - runner: ubuntu-latest
             target: linux
+          - runner: macos-latest
+            target: ios
+          - runner: macos-latest
+            target: macos
     steps:
       # Prepare
       - uses: actions/checkout@v4
@@ -55,3 +59,29 @@ jobs:
         run: |
           sudo apt-get install clang cmake git ninja-build pkg-config libgtk-3-dev liblzma-dev libstdc++-12-dev
           flutter build linux --debug
+
+      # iOS
+      - name: Install CocoaPods (iOS)
+        if: matrix.target == 'ios'
+        run: gem install cocoapods
+
+      - name: Prepare iOS Project (iOS)
+        if: matrix.target == 'ios'
+        run: |
+          cd ios
+          pod install
+          cd ..
+
+      - name: Build iOS App without code signing (iOS)
+        if: matrix.target == 'ios'
+        run: |
+          export CSC_IDENTITY_AUTO_DISCOVERY=false
+          flutter build ios --no-codesign --debug
+
+      # macOS
+      - name: Build macOS App without code signing (macOS)
+        if: matrix.target == 'macos'
+        run: |
+          export CSC_IDENTITY_AUTO_DISCOVERY=false
+          flutter build macos --debug
+

@@ -21,6 +21,10 @@ jobs:
             target: windows
           - runner: ubuntu-latest
             target: linux
+          - runner: macos-latest
+            target: ios
+          - runner: macos-latest
+            target: macos
     steps:
       - uses: actions/checkout@v4
       - name: Setup Flutter
@@ -166,3 +170,57 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: build/linux/x64/release/bundle/linux-x64.zip
+
+
+      # iOS
+      - name: Install CocoaPods (iOS)
+        if: matrix.target == 'ios'
+        run: gem install cocoapods
+
+      - name: Prepare iOS Project (iOS)
+        if: matrix.target == 'ios'
+        run: |
+          cd ios
+          pod install
+          cd ..
+
+      - name: Build iOS App without code signing (iOS)
+        if: matrix.target == 'ios'
+        run: |
+          export CSC_IDENTITY_AUTO_DISCOVERY=false
+          flutter build ios --no-codesign --release
+
+      - name: Archive iOS App (iOS)
+        if: matrix.target == 'ios'
+        uses: thedoctor0/zip-release@0.7.5
+        with:
+          type: 'zip'
+          filename: 'ios.zip'
+          directory: 'build/ios/Release-iphoneos'
+
+      - name: Release iOS App (iOS)
+        if: matrix.target == 'ios'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build/ios/Release-iphoneos/ios.zip
+
+      # macOS
+      - name: Build macOS App without code signing (macOS)
+        if: matrix.target == 'macos'
+        run: |
+          export CSC_IDENTITY_AUTO_DISCOVERY=false
+          flutter build macos --release
+
+      - name: Archive macOS App (macOS)
+        if: matrix.target == 'macos'
+        uses: thedoctor0/zip-release@0.7.5
+        with:
+          type: 'zip'
+          filename: 'macos.zip'
+          directory: 'build/macos/Build/Products/Release'
+
+      - name: Release macOS App (macOS)
+        if: matrix.target == 'macos'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build/macos/Build/Products/Release/macos.zip

@@ -24,6 +24,10 @@ jobs:
             target: windows
           - runner: ubuntu-latest
             target: linux
+          - runner: macos-latest
+            target: ios
+          - runner: macos-latest
+            target: macos
     steps:
       - uses: actions/checkout@v4
       - name: Setup Flutter
@@ -145,3 +149,42 @@ jobs:
         with:
           name: linux-x64
           path: build/linux/x64/release/bundle/*
+
+      # iOS/iPadOS
+      - name: Install CocoaPods (iOS)
+        if: matrix.target == 'ios'
+        run: gem install cocoapods
+
+      - name: Prepare iOS Project (iOS)
+        if: matrix.target == 'ios'
+        run: |
+          cd ios
+          pod install
+          cd ..
+
+      - name: Build iOS App without code signing (iOS)
+        if: matrix.target == 'ios'
+        run: |
+          export CSC_IDENTITY_AUTO_DISCOVERY=false
+          flutter build ios --no-codesign --release
+
+      - name: Upload iOS Artifact (iOS)
+        if: matrix.target == 'ios'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios
+          path: build/ios/Release-iphoneos/*.app
+
+      # macOS
+      - name: Build macOS App without code signing (macOS)
+        if: matrix.target == 'macos'
+        run: |
+          export CSC_IDENTITY_AUTO_DISCOVERY=false
+          flutter build macos --release
+
+      - name: Upload macOS Artifact (macOS)
+        if: matrix.target == 'macos'
+        uses: actions/upload-artifact@v4
+        with:
+          name: macos
+          path: build/macos/Build/Products/Release/*.app
