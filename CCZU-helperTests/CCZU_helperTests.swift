@@ -6,7 +6,6 @@
 //
 
 import Testing
-@testable import CCZU_helper
 
 struct CCZU_helperTests {
 
