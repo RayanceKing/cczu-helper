@@ -35,7 +35,7 @@
 https://github.com/CCZU-OSSA/cczu-helper/issues
 
 ### 项目结构
-
+''' 
 ├── CCZUHelper                         # 项目根目录，重命名为更符合 Swift 惯例
 │   ├── Assets.xcassets
 │   │   ├── AccentColor.colorset       # 强调色配置
@@ -148,7 +148,7 @@ https://github.com/CCZU-OSSA/cczu-helper/issues
 │   └── Update.proto
 ├── LICENSE
 ├── README.md
-└── TODO.md
+└── TODO.md'''
 
 ### 如何编译
 
