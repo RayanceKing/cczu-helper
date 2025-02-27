@@ -1,3 +1,10 @@
+//
+//  MainView.swift
+//  CCZU-helper
+//
+//  Created by rayanceking on 2/25/25.
+//
+
 import SwiftUI
 
 struct MainView: View {
@@ -90,7 +97,7 @@ struct MainView: View {
             let logFile = documentsDir.appendingPathComponent("error.log")
             if FileManager.default.fileExists(atPath: logFile.path) {
                 do {
-                    let data = try String(contentsOf: logFile)
+                    let data = try String(contentsOf: logFile, encoding: .utf8) // 修复：指定 UTF-8 编码
                     try FileManager.default.removeItem(at: logFile)
                     logger.info("检测到错误日志，已删除: \(data)")
                 } catch {

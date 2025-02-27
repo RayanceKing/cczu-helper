@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		45D1370B2D709FF20006A7CA /* CalendarKit in Frameworks */ = {isa = PBXBuildFile; productRef = 45D1370A2D709FF20006A7CA /* CalendarKit */; };
+		45D1370D2D70B2180006A7CA /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 45D1370C2D70B2180006A7CA /* Config.xcconfig */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		4505C0372D6E027E004E7074 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +32,7 @@
 		4505C0232D6E027D004E7074 /* CCZU-helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CCZU-helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4505C0362D6E027E004E7074 /* CCZU-helperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CCZU-helperTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4505C0402D6E027E004E7074 /* CCZU-helperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CCZU-helperUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		45D1370C2D70B2180006A7CA /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -52,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45D1370B2D709FF20006A7CA /* CalendarKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +82,7 @@
 		4505C01A2D6E027D004E7074 = {
 			isa = PBXGroup;
 			children = (
+				45D1370C2D70B2180006A7CA /* Config.xcconfig */,
 				4505C0252D6E027D004E7074 /* CCZU-helper */,
 				4505C0392D6E027E004E7074 /* CCZU-helperTests */,
 				4505C0432D6E027E004E7074 /* CCZU-helperUITests */,
@@ -112,6 +120,7 @@
 			);
 			name = "CCZU-helper";
 			packageProductDependencies = (
+				45D1370A2D709FF20006A7CA /* CalendarKit */,
 			);
 			productName = "CCZU-helper";
 			productReference = 4505C0232D6E027D004E7074 /* CCZU-helper.app */;
@@ -195,6 +204,9 @@
 			);
 			mainGroup = 4505C01A2D6E027D004E7074;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				45D137092D709FF20006A7CA /* XCRemoteSwiftPackageReference "CalendarKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 4505C0242D6E027D004E7074 /* Products */;
 			projectDirPath = "";
@@ -212,6 +224,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45D1370D2D70B2180006A7CA /* Config.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +284,7 @@
 /* Begin XCBuildConfiguration section */
 		4505C0482D6E027E004E7074 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45D1370C2D70B2180006A7CA /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -332,6 +346,7 @@
 		};
 		4505C0492D6E027E004E7074 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45D1370C2D70B2180006A7CA /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -385,6 +400,7 @@
 		};
 		4505C04B2D6E027E004E7074 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45D1370C2D70B2180006A7CA /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -424,6 +440,7 @@
 		};
 		4505C04C2D6E027E004E7074 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45D1370C2D70B2180006A7CA /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -463,6 +480,7 @@
 		};
 		4505C04E2D6E027E004E7074 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45D1370C2D70B2180006A7CA /* Config.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -486,6 +504,7 @@
 		};
 		4505C04F2D6E027E004E7074 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45D1370C2D70B2180006A7CA /* Config.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -509,6 +528,7 @@
 		};
 		4505C0512D6E027E004E7074 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45D1370C2D70B2180006A7CA /* Config.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -531,6 +551,7 @@
 		};
 		4505C0522D6E027E004E7074 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45D1370C2D70B2180006A7CA /* Config.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -591,6 +612,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		45D137092D709FF20006A7CA /* XCRemoteSwiftPackageReference "CalendarKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/richardtop/CalendarKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.11;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		45D1370A2D709FF20006A7CA /* CalendarKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45D137092D709FF20006A7CA /* XCRemoteSwiftPackageReference "CalendarKit" */;
+			productName = CalendarKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4505C01B2D6E027D004E7074 /* Project object */;
 }

@@ -1,3 +1,10 @@
+//
+//  CCZU_helperApp.swift
+//  CCZU-helper
+//
+//  Created by rayanceking on 2/25/25.
+//
+
 import SwiftUI
 import UserNotifications
 
@@ -26,8 +33,6 @@ struct CCZUHelperApp: App {
     @StateObject private var logger = Logger()
 
     init() {
-        ErrorHandlerContext.logger = logger
-        ErrorHandlerContext.configs = configs
         setupErrorHandling()
         TimeZone.initializeTimeZones()
     }
@@ -39,6 +44,9 @@ struct CCZUHelperApp: App {
                 .environmentObject(logger)
                 .preferredColorScheme(configs.themeMode == .system ? nil : (configs.themeMode == .dark ? .dark : .light))
                 .onAppear {
+                    // 在视图加载后设置静态变量
+                    ErrorHandlerContext.logger = logger
+                    ErrorHandlerContext.configs = configs
                     loadInitialData()
                 }
         }
