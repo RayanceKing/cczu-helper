@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45B967CE2D71535200B46D8F /* KVKCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 45B967CD2D71535200B46D8F /* KVKCalendar */; };
 		45D1370B2D709FF20006A7CA /* CalendarKit in Frameworks */ = {isa = PBXBuildFile; productRef = 45D1370A2D709FF20006A7CA /* CalendarKit */; };
 		45D1370D2D70B2180006A7CA /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 45D1370C2D70B2180006A7CA /* Config.xcconfig */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45D1370B2D709FF20006A7CA /* CalendarKit in Frameworks */,
+				45B967CE2D71535200B46D8F /* KVKCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +88,7 @@
 				4505C0252D6E027D004E7074 /* CCZU-helper */,
 				4505C0392D6E027E004E7074 /* CCZU-helperTests */,
 				4505C0432D6E027E004E7074 /* CCZU-helperUITests */,
+				45B967CC2D71535200B46D8F /* Frameworks */,
 				4505C0242D6E027D004E7074 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,6 +101,13 @@
 				4505C0402D6E027E004E7074 /* CCZU-helperUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		45B967CC2D71535200B46D8F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,6 +131,7 @@
 			name = "CCZU-helper";
 			packageProductDependencies = (
 				45D1370A2D709FF20006A7CA /* CalendarKit */,
+				45B967CD2D71535200B46D8F /* KVKCalendar */,
 			);
 			productName = "CCZU-helper";
 			productReference = 4505C0232D6E027D004E7074 /* CCZU-helper.app */;
@@ -206,6 +217,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				45D137092D709FF20006A7CA /* XCRemoteSwiftPackageReference "CalendarKit" */,
+				45B967CB2D71532800B46D8F /* XCRemoteSwiftPackageReference "KVKCalendar" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 4505C0242D6E027D004E7074 /* Products */;
@@ -614,6 +626,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		45B967CB2D71532800B46D8F /* XCRemoteSwiftPackageReference "KVKCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kvyatkovskys/KVKCalendar";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.29;
+			};
+		};
 		45D137092D709FF20006A7CA /* XCRemoteSwiftPackageReference "CalendarKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/richardtop/CalendarKit";
@@ -625,6 +645,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		45B967CD2D71535200B46D8F /* KVKCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45B967CB2D71532800B46D8F /* XCRemoteSwiftPackageReference "KVKCalendar" */;
+			productName = KVKCalendar;
+		};
 		45D1370A2D709FF20006A7CA /* CalendarKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 45D137092D709FF20006A7CA /* XCRemoteSwiftPackageReference "CalendarKit" */;

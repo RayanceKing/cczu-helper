@@ -1,5 +1,5 @@
 {
-  "originHash" : "67a1c5e835fc1360427d7e9a548368960eed766e429f7c9f11a95a0e99d682d9",
+  "originHash" : "75beba8c096ae08ec427bc6369589c5329c47d5058988aa7b795bed2612369bf",
   "pins" : [
     {
       "identity" : "calendarkit",
@@ -8,6 +8,15 @@
       "state" : {
         "revision" : "89e02a1472e9ad815ae72b62fd15430144fd1c4c",
         "version" : "1.1.11"
+      }
+    },
+    {
+      "identity" : "kvkcalendar",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kvyatkovskys/KVKCalendar",
+      "state" : {
+        "revision" : "fbd59e96585c9131c73f1a192b774c0ed9490f45",
+        "version" : "0.6.29"
       }
     }
   ],

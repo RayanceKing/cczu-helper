@@ -107,3 +107,14 @@ struct MainView: View {
         }
     }
 }
+
+struct MainView_Previews : PreviewProvider {
+    static var previews: some View {
+        let configs = ApplicationConfigs()
+        let logger = Logger()
+        
+        return MainView()
+            .environmentObject(configs)
+            .environmentObject(logger)
+    }
+}
